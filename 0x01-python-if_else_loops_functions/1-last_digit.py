@@ -23,4 +23,4 @@ else:
     text = "and is 0"
 
 # Print last digit
-print("Last digit of {} is {} {}".format(number, last_digit, text))
+print("Last digit of {:d} is {:d} {:s}".format(number, last_digit, text))
