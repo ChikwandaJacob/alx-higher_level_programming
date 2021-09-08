@@ -2,7 +2,7 @@
 
 import random
 
-number = random.randint(-10, 10)
+number = random.randint(-10000, 10000)
 
 # Convert random generated number into string
 text = str(number)
