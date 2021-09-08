@@ -10,13 +10,17 @@ text = str(number)
 # Store last digit
 last_digit = int(text[len(text) - 1])
 
-# Print last digit
-print("Last digit of {} is {} ".format(number, last_digit), end = "")
+# Ensure last digit has same sign as origial number
+if number < 0:
+    last_digit *= -1
 
 # Do some checks on the last digit
 if last_digit > 5:
-    print("and is greater than 5")
-elif last_digit == 0:
-    print("and is 0")
+    text = "and is greater than 5"
 elif last_digit < 6 and last_digit != 0:
-    print("and is less than 6 and not 0")
+    text = "and is less than 6 and not 0"
+else:
+    text = "and is 0"
+
+# Print last digit
+print("Last digit of {} is {} {}".format(number, last_digit, text))
