@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 
-# Set up ASCII values
-start = 97
-stop = 123
-
 # Loop through the values
-for letter in range(start, stop):
+for letter in range(97, 123):
     print(chr(letter), end="")
