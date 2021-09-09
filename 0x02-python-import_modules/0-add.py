@@ -8,4 +8,4 @@ a = 1
 b = 2
 
 # involke the function call add() to print sum of 1 and 2
-print("{} + {} = {}".format(a, b, add(1, 2)))
+print("{} + {} = {}".format(a, b, add(a, b)))
