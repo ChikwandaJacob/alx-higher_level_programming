@@ -60,7 +60,7 @@ if __name__ == "__main__":
     b = int(argv[b_position])
 
     """ Handle invalid operator """
-    if not operator in operators:
+    if operator not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
