@@ -8,4 +8,5 @@ a = 1
 b = 2
 
 # involke the function call add() to print sum of 1 and 2
-print("{} + {} = {}".format(a, b, add(a, b)))
+if __name__ == "__main__":
+    print("{} + {} = {}".format(a, b, add(a, b)))
