@@ -24,7 +24,7 @@ if __name__ == "__main__":
     for index in range(0, module_length):
         text = module_content[index]
 
-        if start_symbol == text[:2]:
+        if start_symbol == text[0:2]:
             continue
         else:
             print(text)
