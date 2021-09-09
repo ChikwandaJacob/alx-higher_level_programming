@@ -6,4 +6,4 @@ stop = 123
 
 # Loop through the values
 for letter in range(start, stop):
-    print("{:c}".format(letter))
+    print("{:c}".format(letter), end='')
