@@ -1,80 +1,54 @@
 #include "lists.h"
 
 /**
- * getLength - gets the length of the linked list.
- *
- * @head: pointer to the head of the linked list.
- * Return: the integer length of the linked list.
+ * reverse - reverses a list
+ * @head: head of the linked list
+ * Return: head
  */
-unsigned int getLength(listint_t *head)
+listint_t *reverse(listint_t *head)
 {
-	listint_t *current = head;
-	int counter = 0;
+	listint_t *act, *prev;
 
-	while (current)
+	if (head == NULL)
+		return (NULL);
+
+	prev = head;
+	act = head->next;
+
+	while (act != NULL)
 	{
-		current = current->next;
-		counter++;
+		prev->next = act->next;
+		act->next = head;
+		head = act;
+		act = prev->next;
 	}
 
-	return (counter);
+	return (head);
 }
+
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
- *
  * @head: beginning of the linked list
- * Return: True if linked list is palindrome.
- *         Otherwise False.
+ * Return: True if linked list is palindrome. Otherwise False.
  */
 int is_palindrome(listint_t **head)
 {
-	/* Lets get the size of the linked list */
-	unsigned int linked_list_len = getLength(*head);
-	int is_palindrome = 1;
-	unsigned int index = 0;
-	unsigned int r_index = 0;
+	listint_t *cur = *head, *temp = *head;
 
-	/* Perform checks */
-	if (linked_list_len == 0)
+	cur = reverse(cur);
+
+	if (!*head)
 		return (1);
 
-	/* Declare array */
-	unsigned int arr[linked_list_len];
-
-/* Loop through list and assign values to new array */
-	listint_t *current = *head;
-
-	while (current)
+	while (temp)
 	{
-		arr[index] = current->n;
-		current = current->next;
-		index++;
+		if (cur->n != temp->n)
+			return (0);
+
+		cur = cur->next;
+		temp = temp->next;
 	}
 
-	/* Declare array to hold reverse of arr */
-	unsigned int rev_arr[linked_list_len];
-
-	/* Assign values to reverse array */
-
-	while (index < linked_list_len)
-	{
-		index--;
-		rev_arr[r_index] = arr[index];
-		r_index++;
-	}
-
-	/* Compare the two arrays */
-
-	while (index < linked_list_len)
-	{
-		/* If the contents are not the same return 0 */
-		r_index--;
-		if (arr[index] != rev_arr[r_index])
-			is_palindrome = 0;
-
-		index++;
-	}
-
-	return (is_palindrome);
+	return (1);
 }
