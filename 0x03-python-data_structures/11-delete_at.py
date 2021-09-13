@@ -19,18 +19,18 @@
 
 def delete_at(my_list=[], idx=0):
 
-    """ Make a copy of the original list """
-    list_copy = my_list.copy()
-
-    """ Clear the original list """
-    my_list.clear()
-
     """ Perform checks on idx """
-    bound = len(list_copy) - 1
+    bound = len(my_list) - 1
 
     if (idx < 0 or idx > bound):
-        my_list = list_copy
+        return (my_list)
     else:
+
+        """ Make a copy of the original list """
+        list_copy = my_list.copy()
+
+        """ Clear the original list """
+        my_list.clear()
 
         """ Loop through the copied list """
         for index in range(bound + 1):
