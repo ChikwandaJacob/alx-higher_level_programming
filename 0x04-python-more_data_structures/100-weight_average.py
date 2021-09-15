@@ -3,6 +3,9 @@
 
 def weight_average(my_list=[]):
 
+    if (len(my_list) == 0):
+        return (0)
+
     """ Get total weights """
     weight_by_score = 0
     cum_weight = 0
