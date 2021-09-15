@@ -20,7 +20,7 @@ def square_matrix_simple(matrix=[]):
 
     """ Double the contents of matrix and save them in dbl_matrix """
     for num in matrix:
-        dbl_matrix.append(list(map((lambda elem : elem ** 2), num)))
+        dbl_matrix.append(list(map((lambda elem: elem ** 2), num)))
 
     """ Return the new doubled list """
     return (dbl_matrix)
