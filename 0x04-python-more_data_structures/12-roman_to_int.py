@@ -35,6 +35,8 @@ def roman_to_int(roman_string):
 
         if sym in symbols:
             result += rom_num[sym]
+        else:
+            return (0)
 
     """ Return the result """
     return (result)
