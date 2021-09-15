@@ -23,11 +23,8 @@ def best_score(a_dictionary):
     """ Get keys & populate scores list """
     scores = list(a_dictionary.values())
 
-    """ Sort the scores """
-    scores.sort()
-
     """ Store the maximum value """
-    max_value = scores[len(scores) - 1]
+    max_value = max(scores)
 
     """ Search for the key with max value """
     for key, value in a_dictionary.items():
