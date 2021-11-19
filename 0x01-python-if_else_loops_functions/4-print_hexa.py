@@ -6,4 +6,4 @@ stop = 99
 
 # Print hex values with the help of for loop
 for index in range(start, stop):
-    print("{:s} = {:s}".format(str(index), hex(index)))
+    print("{:d} = 0x{:x}".format(index, index))
