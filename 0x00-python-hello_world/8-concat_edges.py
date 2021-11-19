@@ -3,4 +3,5 @@
 str = "Python is an interpreted, interactive, object-oriented programming\
 language that combines remarkable power with very clear syntax"
 
-print("{:s} {:s} {:s}".format(str[39:66], str[106:110], str[0:6]))
+str = str[39:66] + str[105:111] + str[0:6]
+print(str)
