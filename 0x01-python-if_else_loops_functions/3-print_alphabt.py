@@ -3,4 +3,4 @@
 for l in range(97, 123):
 
     if (chr(l) != 'q' and chr(l) != 'e'):
-        print(chr(l), end='')
+        print("{}".format(chr(l)), end='')
