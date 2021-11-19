@@ -8,7 +8,4 @@ def fizzbuzz():
         else:
             print(i, end="")
 
-        if (i < 100):
-            print(" ", end="")
-        else:
-            print(end=" ")
+        print(end=" ")
