@@ -2,5 +2,5 @@
 
 for l in range(97, 123):
 
-    if (chr(l) != 'q' or chr(l) != 'e'):
+    if (chr(l) != 'q' and chr(l) != 'e'):
         print(chr(l), end='')
