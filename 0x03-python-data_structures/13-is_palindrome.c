@@ -1,29 +1,21 @@
 #include "lists.h"
 
 /**
- * reverse - reverses a list
+ * count - counts number of elements in the list
  * @head: head of the linked list
- * Return: head
+ * Return: number of elements
  */
-listint_t *reverse(listint_t *head)
+int count(listint_t *head)
 {
-	listint_t *act, *prev;
+	int i = 0;
 
-	if (head == NULL)
-		return (NULL);
-
-	prev = head;
-	act = head->next;
-
-	while (act != NULL)
+	while (head)
 	{
-		prev->next = act->next;
-		act->next = head;
-		head = act;
-		act = prev->next;
+		i++;
+		head = head->next;
 	}
 
-	return (head);
+	return (i);
 }
 
 
@@ -34,21 +26,34 @@ listint_t *reverse(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cur = *head, *temp = *head;
+	listint_t *temp1 = *head, *temp2 = *head;
 
-	cur = reverse(cur);
+	int arr[count(temp1)], i = 0, is_palindrome = 0;
 
-	if (!temp)
+	if (!temp1)
 		return (1);
 
-	while (temp)
+	while (temp1)
 	{
-		if (cur->n != temp->n)
-			return (0);
-
-		cur = cur->next;
-		temp = temp->next;
+		arr[i] = temp1->n;
+		i++;
+		temp1 = temp1->next;
 	}
 
-	return (1);
+	i--;
+
+	while (temp2)
+	{
+		if (arr[i] == temp2->n)
+			is_palindrome = 1;
+		else
+		{
+			is_palindrome = 0;
+			break;
+		}
+		i--;
+		temp2 = temp2->next;
+	}
+
+	return (is_palindrome);
 }
