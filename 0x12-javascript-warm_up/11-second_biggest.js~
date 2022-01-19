@@ -1,0 +1,12 @@
+#!/usr/bin/node
+
+const list = process.argv.map(item => parseInt(item)).sort((i, j) => {
+  return i - j;
+}).slice(2);
+const list_len = list.length;
+
+if (list_len <= 1) {
+  console.log(0);
+} else {
+  console.log(list[list_len - 2]);
+}
