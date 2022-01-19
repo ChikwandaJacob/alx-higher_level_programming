@@ -14,6 +14,6 @@ if (process.argv[2] && process.argv[2] > 0) {
   }
 }
 
-if (!process.argv[2]) {
+if (!process.argv[2] || isNaN(process.argv[2])) {
   console.log('Missing size');
 }
